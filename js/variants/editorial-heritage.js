@@ -1,6 +1,6 @@
 /* ==========================================================================
-   VARIANT 3: EDITORIAL HERITAGE (TANG BOWS INSPIRED)
-   High-craft artisan storytelling, serif typography, and curated gift boxes.
+   VARIANT 3: EDITORIAL HERITAGE (TANG BOWS CAMPUS ATELIER)
+   Artisan craftsmanship, itemized tier transparency, and luxury typography.
    ========================================================================== */
 
 function variantEditorialHeritage() {
@@ -44,7 +44,7 @@ function variantEditorialHeritage() {
           color: #C9A84C;
         }
 
-        /* Hero Section */
+        /* Hero */
         .v3-hero {
           min-height: 80vh;
           display: flex;
@@ -53,7 +53,6 @@ function variantEditorialHeritage() {
           align-items: center;
           text-align: center;
           padding: 6rem 2rem 4rem;
-          position: relative;
         }
         .v3-gold-line {
           width: 1px;
@@ -74,7 +73,7 @@ function variantEditorialHeritage() {
           font-size: clamp(2.4rem, 5.5vw, 4.2rem);
           font-weight: 300;
           line-height: 1.15;
-          max-width: 860px;
+          max-width: 880px;
           margin-bottom: 1.25rem;
         }
         .v3-hero-title em {
@@ -86,7 +85,7 @@ function variantEditorialHeritage() {
           font-size: 1.3rem;
           font-style: italic;
           color: #9A9A9A;
-          max-width: 620px;
+          max-width: 640px;
           margin-bottom: 2.5rem;
         }
         .v3-btn-gold {
@@ -109,271 +108,289 @@ function variantEditorialHeritage() {
           background: #E8C97A;
         }
 
-        /* Philosophy & Pillars */
-        .v3-philosophy {
-          padding: 6rem 2rem;
-          max-width: 1000px;
+        /* Showcase Grid */
+        .v3-showcase {
+          max-width: 1100px;
           margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 4rem;
-          align-items: center;
+          padding: 5rem 2rem;
         }
-        @media (max-width: 800px) {
-          .v3-philosophy { grid-template-columns: 1fr; gap: 2.5rem; }
+        .v3-tiers-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2rem;
+          margin-top: 2.5rem;
+        }
+        .v3-tier-box {
+          background: #11151E;
+          border: 1px solid rgba(201, 168, 76, 0.2);
+          padding: 2.2rem;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .v3-tier-box.highlight {
+          border-color: #C9A84C;
+          background: #141924;
+          box-shadow: 0 10px 30px rgba(201, 168, 76, 0.1);
+        }
+        .v3-tier-header {
+          border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+          padding-bottom: 1rem;
+          margin-bottom: 1.25rem;
+        }
+        .v3-tier-title {
+          font-family: var(--font-serif);
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: #FFF;
+        }
+        .v3-tier-price {
+          font-family: var(--font-display);
+          font-size: 1.7rem;
+          color: #E8C97A;
+          margin-top: 0.4rem;
+        }
+
+        .v3-itemized-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1rem 0;
+          font-size: 0.85rem;
+        }
+        .v3-itemized-table td {
+          padding: 6px 0;
+          border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+          color: #BBB;
+        }
+        .v3-itemized-table td.cost {
+          text-align: right;
+          color: #E8C97A;
+          font-weight: 600;
+        }
+
+        /* Philosophy */
+        .v3-philosophy {
+          background: #080A0E;
+          border-top: 1px solid rgba(201, 168, 76, 0.15);
+          border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+          padding: 6rem 2rem;
+          text-align: center;
         }
         .v3-quote {
           font-family: var(--font-serif);
-          font-size: 1.7rem;
+          font-size: 1.8rem;
           font-style: italic;
-          line-height: 1.55;
           color: #FAF8F5;
-          border-left: 2px solid #C9A84C;
-          padding-left: 1.75rem;
-        }
-        .v3-pillar-item {
-          margin-bottom: 1.75rem;
-        }
-        .v3-pillar-num {
-          font-family: var(--font-display);
-          font-size: 0.72rem;
-          letter-spacing: 0.25em;
-          color: #C9A84C;
-          margin-bottom: 0.35rem;
-        }
-        .v3-pillar-text {
-          font-size: 0.95rem;
-          color: #C2C2C2;
+          max-width: 820px;
+          margin: 0 auto 2.5rem;
           line-height: 1.6;
-        }
-
-        /* Curated Combo Section */
-        .v3-combos-section {
-          background: #11151E;
-          border-top: 1px solid rgba(201, 168, 76, 0.15);
-          border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-          padding: 5rem 2rem;
-        }
-        .v3-combos-inner {
-          max-width: 1040px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-          align-items: center;
-        }
-        @media (max-width: 850px) {
-          .v3-combos-inner { grid-template-columns: 1fr; gap: 2rem; }
-        }
-        .v3-combo-box {
-          background: #0B0E14;
-          border: 1px solid rgba(201, 168, 76, 0.25);
-          padding: 2.5rem;
-          position: relative;
-        }
-        .v3-combo-box::before {
-          content: 'SCHOLAR';
-          font-family: var(--font-display);
-          font-size: 4rem;
-          color: rgba(201, 168, 76, 0.05);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          white-space: nowrap;
-          pointer-events: none;
-        }
-        .v3-tag-cloud {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.6rem;
-          position: relative;
-          z-index: 2;
-        }
-        .v3-tag {
-          background: rgba(201, 168, 76, 0.08);
-          border: 1px solid rgba(201, 168, 76, 0.3);
-          color: #E8C97A;
-          font-size: 0.72rem;
-          letter-spacing: 0.1em;
-          padding: 0.4rem 0.8rem;
-          text-transform: uppercase;
-        }
-
-        /* Products Grid */
-        .v3-collection {
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 6rem 2rem;
-        }
-        .v3-products-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-        .v3-prod-card {
-          background: #11151E;
-          border: 1px solid rgba(201, 168, 76, 0.15);
-          padding: 1.5rem;
-          position: relative;
-          transition: border-color 200ms ease;
-        }
-        .v3-prod-card:hover {
-          border-color: #C9A84C;
-        }
-        .v3-prod-card img {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-          margin-bottom: 1rem;
-        }
-
-        /* Founder note */
-        .v3-artisan {
-          background: #07090D;
-          padding: 5rem 2rem;
-          text-align: center;
-          border-top: 1px solid rgba(201, 168, 76, 0.15);
-        }
-        .v3-artisan-inner {
-          max-width: 700px;
-          margin: 0 auto;
         }
       </style>
 
       <!-- Sticky Header -->
       <header class="v3-header">
         <div class="v3-logo" onclick="window.smoothScrollTo('v3-hero')">
-          ELIKAR CRAFTS
+          ELIKAR CRAFTS &amp; CAMPUS
         </div>
         <ul class="v3-nav-links">
-          <li><a href="#v3-philosophy" onclick="window.smoothScrollTo('v3-philosophy')">Craft Values</a></li>
-          <li><a href="#v3-combos" onclick="window.smoothScrollTo('v3-combos')">Gift Packages</a></li>
-          <li><a href="#v3-collection" onclick="window.smoothScrollTo('v3-collection')">Collection</a></li>
+          <li><a href="#v3-jewelry" onclick="window.smoothScrollTo('v3-jewelry')">Jewelry Boxes</a></li>
+          <li><a href="#v3-study" onclick="window.smoothScrollTo('v3-study')">Study Suites</a></li>
+          <li><a href="#v3-philosophy" onclick="window.smoothScrollTo('v3-philosophy')">Craft Note</a></li>
         </ul>
       </header>
 
-      <!-- Hero Section -->
+      <!-- Hero -->
       <section class="v3-hero" id="v3-hero">
         <div class="v3-gold-line"></div>
-        <p class="v3-hero-sub">The Atelier — Est. Lagos, Nigeria</p>
+        <p class="v3-hero-sub">The Campus Collection — Est. Lagos, Nigeria</p>
         <h1 class="v3-hero-title">
-          School Accessories That Outlast <em>The Term</em>
+          Curated Jewelry Boxes &amp; <em>Dorm Study Suites</em>
         </h1>
         <p class="v3-hero-desc">
-          "Every bow, ribbon, and scrunchie is engineered for active school days and hand-stitched with love."
+          "Dorm rooms are where dreams are shaped. Equip yourself with elegance, calm lighting, and tools built for academic triumph."
         </p>
-        <button class="v3-btn-gold" onclick="window.smoothScrollTo('v3-combos')">
-          <span>Explore Scholar Packages</span>
+        <button class="v3-btn-gold" onclick="window.smoothScrollTo('v3-jewelry')">
+          <span>Explore Campus Tiers</span>
         </button>
       </section>
 
-      <!-- Philosophy & 3 Pillars -->
-      <section class="v3-philosophy" id="v3-philosophy">
-        <div class="v3-quote">
-          "Children deserve accessories made with the same dignity and durability as heirloom pieces. We refuse to make disposable hair items that snap by midterm."
+      <!-- JEWELRY BOXES SECTION -->
+      <section class="v3-showcase" id="v3-jewelry">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <span style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.25em; color: #C9A84C; text-transform: uppercase;">Collection One</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 300; margin-top: 0.5rem;">
+            Curated Velvet <em>Jewelry Boxes</em>
+          </h2>
+          <div style="width: 40px; height: 1px; background: #C9A84C; margin: 1rem auto;"></div>
         </div>
-        <div>
-          <div class="v3-pillar-item">
-            <p class="v3-pillar-num">01 — UNIFORM ACCURACY</p>
-            <p class="v3-pillar-text">Precision color-matching for Lagos, Abuja, and international schools without tacky mass-market plastic prints.</p>
-          </div>
-          <div class="v3-pillar-item">
-            <p class="v3-pillar-num">02 — DURABILITY GUARANTEE</p>
-            <p class="v3-pillar-text">Double heat-welded ribbon edges that resist fraying after dozens of playground sessions and washing cycles.</p>
-          </div>
-          <div class="v3-pillar-item">
-            <p class="v3-pillar-num">03 — DIGNIFIED PRESENTATION</p>
-            <p class="v3-pillar-text">Hand-packaged in personalized keepsake cases with student monograms and custom note cards.</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Curated Combos Box -->
-      <section class="v3-combos-section" id="v3-combos">
-        <div class="v3-combos-inner">
-          <div class="v3-combo-box">
-            <div class="v3-tag-cloud">
-              <span class="v3-tag">Academy Bows</span>
-              <span class="v3-tag">Snag-Free Scrunchies</span>
-              <span class="v3-tag">Embroidered Bag Tag</span>
-              <span class="v3-tag">No-Headache Alice Band</span>
-              <span class="v3-tag">Waterproof Pouch</span>
-              <span class="v3-tag">Resin Hair Claws</span>
-              <span class="v3-tag">Handwritten Blessing Card</span>
+        <div class="v3-tiers-grid">
+          <!-- Tier 1 -->
+          <div class="v3-tier-box">
+            <div>
+              <div class="v3-tier-header">
+                <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #C9A84C; text-transform: uppercase;">Tier 1 Starter</span>
+                <h3 class="v3-tier-title">Jewelry Box (Tier 1)</h3>
+                <div class="v3-tier-price">₦13,000</div>
+              </div>
+              <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">
+                Essential layering pieces + special complimentary skincare bonus.
+              </p>
+              <table class="v3-itemized-table">
+                <tr><td>The Keepsake Velvet Box</td><td class="cost">Included</td></tr>
+                <tr><td>1x Statement Necklace</td><td class="cost">Included</td></tr>
+                <tr><td>1x Earring Pair</td><td class="cost">Included</td></tr>
+                <tr><td>1x Delicate Bracelet</td><td class="cost">Included</td></tr>
+                <tr><td style="color: #E8C97A;">✨ Complimentary Face Masks</td><td class="cost" style="color: #34D399;">Free</td></tr>
+              </table>
             </div>
+            <button class="v3-btn-gold" style="margin-top: 1.5rem; width: 100%; justify-content: center;" onclick="window.v3OrderTier('Jewelry Box (Tier 1)', '₦13,000')">
+              Pre-Order Tier 1
+            </button>
           </div>
-          <div>
-            <span style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.2em; color: #C9A84C; text-transform: uppercase;">Curated Box</span>
-            <h2 style="font-family: var(--font-serif); font-size: 2.4rem; font-weight: 300; margin: 0.5rem 0 1rem;">
-              The Complete Term Prep <em>Scholar Gift Box</em>
-            </h2>
-            <p style="font-size: 0.95rem; color: #A0A0A0; line-height: 1.7; margin-bottom: 1.5rem;">
-              Assembled with intention for parents who want a stress-free start to the academic year. Available in standard ₦15,500 and boarding house reserve tiers.
-            </p>
-            <button class="v3-btn-gold" onclick="window.v3ConsultOrder()">
-              <span>Pre-Order Gift Box (WhatsApp)</span>
+
+          <!-- Tier 2 -->
+          <div class="v3-tier-box">
+            <div>
+              <div class="v3-tier-header">
+                <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #C9A84C; text-transform: uppercase;">Tier 2 Expanded</span>
+                <h3 class="v3-tier-title">Jewelry Box (Tier 2)</h3>
+                <div class="v3-tier-price">₦18,500</div>
+              </div>
+              <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">
+                Full accessory layering suite with matching rings and earrings.
+              </p>
+              <table class="v3-itemized-table">
+                <tr><td>The Deluxe Multi-Tier Box</td><td class="cost">Included</td></tr>
+                <tr><td>1x Statement Necklace</td><td class="cost">Included</td></tr>
+                <tr><td>2x Earring Pairs</td><td class="cost">Included</td></tr>
+                <tr><td>2x Stackable Bracelets</td><td class="cost">Included</td></tr>
+                <tr><td>1x Minimalist Gold Ring</td><td class="cost">Included</td></tr>
+              </table>
+            </div>
+            <button class="v3-btn-gold" style="margin-top: 1.5rem; width: 100%; justify-content: center;" onclick="window.v3OrderTier('Jewelry Box (Tier 2)', '₦18,500')">
+              Pre-Order Tier 2
+            </button>
+          </div>
+
+          <!-- Tier 3 (Itemized Transparency) -->
+          <div class="v3-tier-box highlight">
+            <div>
+              <div class="v3-tier-header">
+                <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #E8C97A; text-transform: uppercase;">Tier 3 Grand Archive</span>
+                <h3 class="v3-tier-title">Jewelry Box (Tier 3)</h3>
+                <div class="v3-tier-price">₦27,500</div>
+              </div>
+              <p style="font-size: 0.85rem; color: #CCC; margin-bottom: 1rem;">
+                Transparent itemized pricing with the grand lockable archive box.
+              </p>
+              <table class="v3-itemized-table">
+                <tr><td>The Grand Lockable Box</td><td class="cost">₦7,000</td></tr>
+                <tr><td>2 • Statement Necklaces</td><td class="cost">₦7,000</td></tr>
+                <tr><td>2 • Designer Earring Pairs</td><td class="cost">₦3,000</td></tr>
+                <tr><td>1 • Luxury Bracelet</td><td class="cost">₦2,000</td></tr>
+                <tr><td>1 • Ring (Full Set)</td><td class="cost">₦3,500</td></tr>
+              </table>
+            </div>
+            <button class="v3-btn-gold" style="margin-top: 1.5rem; width: 100%; justify-content: center; background: #E8C97A;" onclick="window.v3OrderTier('Jewelry Box (Tier 3 Grand Set)', '₦27,500')">
+              Pre-Order Tier 3 Grand
             </button>
           </div>
         </div>
       </section>
 
-      <!-- Handcrafted Collection Grid -->
-      <section class="v3-collection" id="v3-collection">
-        <div style="text-align: center;">
-          <span style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.25em; color: #C9A84C; text-transform: uppercase;">The Archive</span>
-          <h2 style="font-family: var(--font-serif); font-size: 2.4rem; font-weight: 300; margin-top: 0.5rem;">
-            Handcrafted with <em>Precision</em>
+      <!-- STUDY & DESK SUITES SECTION -->
+      <section class="v3-showcase" id="v3-study" style="border-top: 1px solid rgba(201, 168, 76, 0.15);">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <span style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.25em; color: #C9A84C; text-transform: uppercase;">Collection Two</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 300; margin-top: 0.5rem;">
+            Hostel Study &amp; <em>Stationery Suites</em>
           </h2>
           <div style="width: 40px; height: 1px; background: #C9A84C; margin: 1rem auto;"></div>
         </div>
 
-        <div class="v3-products-grid">
-          ${SCHOOL_PRODUCTS.map(prod => `
-            <div class="v3-prod-card">
-              <img src="${prod.image}" alt="${prod.name}">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                <span style="font-size: 0.7rem; letter-spacing: 0.15em; color: #C9A84C; text-transform: uppercase;">${prod.category}</span>
-                <span style="font-size: 0.7rem; color: #9A9A9A;">${prod.leadTime}</span>
+        <div class="v3-tiers-grid">
+          <!-- Study Tier 1 -->
+          <div class="v3-tier-box">
+            <div>
+              <div class="v3-tier-header">
+                <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #C9A84C; text-transform: uppercase;">Study Tier 1</span>
+                <h3 class="v3-tier-title">Stationery Essentials</h3>
+                <div class="v3-tier-price">₦12,500</div>
               </div>
-              <h4 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.4rem;">${prod.name}</h4>
-              <p style="font-size: 0.85rem; color: #8A8A8A; line-height: 1.5; margin-bottom: 1rem;">${prod.specs}</p>
-              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201, 168, 76, 0.2); padding-top: 0.8rem;">
-                <span style="font-family: var(--font-display); font-size: 1.15rem; color: #E8C97A;">${prod.priceFormatted}</span>
-                <button class="v3-btn-gold" style="padding: 0.4rem 0.9rem; font-size: 0.7rem;" onclick="window.v3ConsultItem('${prod.name}', '${prod.priceFormatted}')">Commission</button>
-              </div>
+              <table class="v3-itemized-table">
+                <tr><td>Mini Desk Stapler</td><td class="cost">Included</td></tr>
+                <tr><td>Sticky Notes (Pastel Bundle)</td><td class="cost">Included</td></tr>
+                <tr><td>Highlighters Set</td><td class="cost">Included</td></tr>
+                <tr><td>Stylish Quick-Dry Pens</td><td class="cost">Included</td></tr>
+                <tr><td>Double Sided Tape</td><td class="cost">Included</td></tr>
+              </table>
             </div>
-          `).join('')}
+            <button class="v3-btn-gold" style="margin-top: 1.5rem; width: 100%; justify-content: center;" onclick="window.v3OrderTier('Stationery Essentials (Tier 1)', '₦12,500')">
+              Order Stationery Kit
+            </button>
+          </div>
+
+          <!-- Study Tier 2 -->
+          <div class="v3-tier-box">
+            <div>
+              <div class="v3-tier-header">
+                <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #C9A84C; text-transform: uppercase;">Study Tier 2</span>
+                <h3 class="v3-tier-title">Scholar Tech &amp; Lamp</h3>
+                <div class="v3-tier-price">₦26,000</div>
+              </div>
+              <table class="v3-itemized-table">
+                <tr><td>Mini Desk Stapler</td><td class="cost">Included</td></tr>
+                <tr><td>Rechargeable Reading Lamp</td><td class="cost">Included</td></tr>
+                <tr><td>Cute Notebooks &amp; Planners</td><td class="cost">Included</td></tr>
+                <tr><td>Calculator (Natural Display)</td><td class="cost">Included</td></tr>
+              </table>
+            </div>
+            <button class="v3-btn-gold" style="margin-top: 1.5rem; width: 100%; justify-content: center;" onclick="window.v3OrderTier('Scholar Tech & Lamp (Tier 2)', '₦26,000')">
+              Order Scholar Kit
+            </button>
+          </div>
+
+          <!-- Study Tier 3 -->
+          <div class="v3-tier-box highlight">
+            <div>
+              <div class="v3-tier-header">
+                <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #E8C97A; text-transform: uppercase;">Study Tier 3 Ultimate</span>
+                <h3 class="v3-tier-title">Dorm Suite &amp; Reading Table</h3>
+                <div class="v3-tier-price">₦45,000</div>
+              </div>
+              <table class="v3-itemized-table">
+                <tr><td>Foldable Reading Table (Bed/Desk)</td><td class="cost">Included</td></tr>
+                <tr><td>Rechargeable Reading Lamp</td><td class="cost">Included</td></tr>
+                <tr><td>Cute Aesthetic Notebooks</td><td class="cost">Included</td></tr>
+                <tr><td>Calculator (Natural Display)</td><td class="cost">Included</td></tr>
+                <tr><td>Double Sided Heavy Tape</td><td class="cost">Included</td></tr>
+              </table>
+            </div>
+            <button class="v3-btn-gold" style="margin-top: 1.5rem; width: 100%; justify-content: center; background: #E8C97A;" onclick="window.v3OrderTier('Complete Dorm Suite with Reading Table (Tier 3)', '₦45,000')">
+              Pre-Order Full Suite
+            </button>
+          </div>
         </div>
       </section>
 
-      <!-- Artisan Studio Note -->
-      <section class="v3-artisan">
-        <div class="v3-artisan-inner">
-          <div style="font-size: 1.8rem; margin-bottom: 1rem;">🎀</div>
-          <p style="font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: #E8C97A; margin-bottom: 1rem;">
-            "A child's confidence on the first day of school is built on feeling cared for in every detail."
-          </p>
-          <p style="font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8A8A;">Elikar Crafts Studio • Lagos</p>
-        </div>
+      <!-- Craft Philosophy Note -->
+      <section class="v3-philosophy" id="v3-philosophy">
+        <div style="font-size: 1.8rem; margin-bottom: 1rem;">🎀 📚</div>
+        <p class="v3-quote">
+          "University life is demanding enough. Your dorm room should feel like a sanctuary of calm organization, sparkling confidence, and dependable tools."
+        </p>
+        <p style="font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: #8A8A8A;">Elikar Crafts Campus Studio • Lagos, Nigeria</p>
       </section>
     </div>
   `;
 }
 
 // Global Event Handlers for Variant 3
-window.v3ConsultOrder = function() {
-  window.showToast("Opening WhatsApp consultation for Scholar Gift Box...");
-  const msg = "Hello Elikar Crafts!%0A%0AI would like to consult with the artisan regarding the Curated Scholar Gift Box for Back to School resumption. Please share customisation slots.";
-  setTimeout(() => {
-    window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
-  }, 400);
-};
-
-window.v3ConsultItem = function(name, price) {
-  window.showToast(`Selected "${name}" for bespoke commission!`);
-  const msg = `Hello Elikar Crafts!%0A%0AI am interested in commissioning "${encodeURIComponent(name)}" (${price}) for the upcoming school session.`;
+window.v3OrderTier = function(tierName, price) {
+  window.showToast(`Selected "${tierName}" (${price}) for WhatsApp order!`);
+  const msg = `Hello Elikar Campus!%0A%0AI would like to pre-order for Back-to-School / Resumption:%0A• Package: ${encodeURIComponent(tierName)} (${price})%0A%0APlease provide bank details and delivery schedule for my campus move-in.`;
   setTimeout(() => {
     window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
   }, 400);
