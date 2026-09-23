@@ -284,7 +284,7 @@ function variantBespokeStudio() {
         .v1-cta-btn {
           width: 100%;
           padding: 0.85rem;
-          background: #25D366;
+          background: #24A1DE;
           color: #FFFFFF;
           border: none;
           border-radius: 10px;
@@ -294,9 +294,11 @@ function variantBespokeStudio() {
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
+          box-shadow: 0 4px 14px rgba(36, 161, 222, 0.3);
+          transition: background-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
         }
         .v1-cta-btn:hover {
-          background: #22BF5B;
+          background: #1F90C7;
         }
 
         /* Catalog Grid */
@@ -424,8 +426,11 @@ function variantBespokeStudio() {
 
               <div class="v1-preview-price" id="v1PreviewPrice">${currentTier.priceFormatted}</div>
               
-              <button class="v1-cta-btn" onclick="window.v1CheckoutWhatsApp()">
-                <span>Order via WhatsApp</span>
+              <button class="v1-cta-btn" onclick="window.v1CheckoutTelegram()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                <span>Order via Telegram</span>
               </button>
             </div>
           </div>
@@ -520,15 +525,23 @@ window.v1QuickAdd = function(name, price) {
   window.showToast(`Added ${name} (${price})`);
 };
 
-window.v1CheckoutWhatsApp = function() {
+window.v1CheckoutTelegram = function() {
   const s = window.v1State;
   const currentTiers = s.collection === 'jewelry' ? JEWELRY_TIERS : STUDY_TIERS;
   const tier = currentTiers[s.tierIndex] || currentTiers[0];
   const collectionLabel = s.collection === 'jewelry' ? 'Stacked' : 'Academia';
 
-  const itemsList = tier.items.map(i => `  - ${i}`).join('%0A');
+  const itemsList = tier.items.map(i => `  - ${i}`).join('\n');
 
-  const msg = `Hello Elikar!%0A%0AI would like to order from *${collectionLabel}*:%0A%0A*${encodeURIComponent(tier.name)}* — ${tier.priceFormatted}%0A${itemsList}%0A%0AName: ${encodeURIComponent(s.studentName || 'Not stated')}%0ALocation: ${encodeURIComponent(s.hall || 'Not stated')}%0A%0APlease let me know how to make payment.`;
+  const orderSummary = `Hello Elikar!\n\nI would like to order from *${collectionLabel}*:\n\n*${tier.name}* — ${tier.priceFormatted}\n${itemsList}\n\nName: ${s.studentName || 'Not stated'}\nLocation: ${s.hall || 'Not stated'}\n\nPlease let me know how to make payment.`;
 
-  window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(orderSummary).catch(() => {});
+  }
+
+  window.showToast("Order copied to clipboard! Opening Telegram...");
+
+  setTimeout(() => {
+    window.open('https://t.me/ElisabethAwadje', '_blank');
+  }, 350);
 };
