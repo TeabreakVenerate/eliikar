@@ -354,10 +354,10 @@ function variantBespokeStudio() {
                 <h3 class="v1-step-title">Choose what you want to order</h3>
                 <div class="v1-collection-switch">
                   <button class="v1-coll-btn ${window.v1State.collection === 'jewelry' ? 'selected' : ''}" onclick="window.v1SetCollection('jewelry', this)">
-                    Jewelry Boxes
+                    Stacked
                   </button>
                   <button class="v1-coll-btn ${window.v1State.collection === 'study' ? 'selected' : ''}" onclick="window.v1SetCollection('study', this)">
-                    Study Kits
+                    Academia
                   </button>
                 </div>
               </div>
@@ -471,7 +471,7 @@ window.v1SetCollection = function(colName, el) {
   const stage = document.getElementById('stage');
   if (stage) stage.innerHTML = variantBespokeStudio();
 
-  window.showToast(`Switched to ${colName === 'jewelry' ? 'Jewelry Boxes' : 'Study Kits'}`);
+  window.showToast(`Switched to ${colName === 'jewelry' ? 'Stacked' : 'Academia'}`);
 };
 
 window.v1SelectTierIndex = function(idx, el) {
@@ -524,10 +524,11 @@ window.v1CheckoutWhatsApp = function() {
   const s = window.v1State;
   const currentTiers = s.collection === 'jewelry' ? JEWELRY_TIERS : STUDY_TIERS;
   const tier = currentTiers[s.tierIndex] || currentTiers[0];
+  const collectionLabel = s.collection === 'jewelry' ? 'Stacked' : 'Academia';
 
   const itemsList = tier.items.map(i => `  - ${i}`).join('%0A');
 
-  const msg = `Hello Elikar!%0A%0AI would like to order:%0A%0A*${encodeURIComponent(tier.name)}* — ${tier.priceFormatted}%0A${itemsList}%0A%0AName: ${encodeURIComponent(s.studentName || 'Not stated')}%0ALocation: ${encodeURIComponent(s.hall || 'Not stated')}%0A%0APlease let me know how to make payment.`;
+  const msg = `Hello Elikar!%0A%0AI would like to order from *${collectionLabel}*:%0A%0A*${encodeURIComponent(tier.name)}* — ${tier.priceFormatted}%0A${itemsList}%0A%0AName: ${encodeURIComponent(s.studentName || 'Not stated')}%0ALocation: ${encodeURIComponent(s.hall || 'Not stated')}%0A%0APlease let me know how to make payment.`;
 
   window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
 };
