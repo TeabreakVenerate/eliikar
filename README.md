@@ -1,37 +1,51 @@
-# Elikar Crafts — Back-to-School Pre-Order Studio
+# Elikar
 
-Handcrafted school uniform accessories, hair bows, snag-free scrunchies, personalized embroidered name tags, and term preparation kits.
+Back-to-school pre-order website for university students.
 
----
+## What is being sold
 
-## Prototype Harness Navigation
+### Jewelry Boxes
+- **Jewelry Box (Tier 1) — ₦13,000** (comes with complimentary face masks)
+  - The box
+  - Necklace
+  - Earring
+  - Bracelet
+- **Jewelry Box (Tier 2) — ₦18,500**
+  - The box
+  - Necklace (1)
+  - Earring (2)
+  - Bracelet (2)
+  - Ring (1)
+- **Jewelry Box (Tier 3) — ₦27,500**
+  - The box (₦7,000)
+  - 2 • Necklace (₦7,000)
+  - 2 • Earring (₦3,000)
+  - 1 • Bracelet (₦2,000)
+  - Ring (1 set) (₦3,500)
 
-This project includes a live **Visual Prototype Picker Harness** adhering verbatim to `PICKER.md` and Emil Kowalski design engineering principles.
+### Study Kits
+- **Study Kit (Tier 1) — ₦12,500**
+  - Mini stapler
+  - Sticky notes
+  - Highlighters
+  - Stylish pens
+  - Double sided tape
+- **Study Kit (Tier 2) — ₦26,000**
+  - Mini stapler
+  - Reading lamp
+  - Cute notebooks & planners
+  - Calculator (natural display)
+- **Study Kit (Tier 3) — ₦45,000**
+  - Reading table
+  - Reading lamp
+  - Cute notebooks
+  - Calculator
+  - Double sided tape
 
-Open `index.html` directly in any web browser or via a local static server.
-
-### Keyboard Shortcuts
-- `1`: Switch to **Variant 1: Bespoke Studio** (Interactive 3-Step Configurator & Live Visualizer)
-- `2`: Switch to **Variant 2: Dual Stream** (Logistics Split: 7-14 Day Pre-Order vs 24h Fast Dispatch)
-- `3`: Switch to **Variant 3: Editorial Heritage** (Tang Bows Luxury Aesthetic, Philosophy, & Curated Boxes)
-- `←` / `→`: Cycle back and forth between prototype variants
-- `R`: Re-mount current variant and replay entrance animations
-
-Selection automatically persists in the URL query string (`?v=1`, `?v=2`, `?v=3`).
-
----
-
-## Radical Variant Divergence
-
-| # | Variant Name | Interaction Axis | Primary Audience / Purpose |
-|---|---|---|---|
-| 1 | **Bespoke Studio** | *Configurator-First Customizer* | Parents who want to customize exact school uniform color matching, child name monogramming, and preview the live plate before ordering. |
-| 2 | **Dual Stream** | *Logistics & Urgency Separation* | Clear distinction between bulk advance pre-orders (Stream A) and immediate 24h replacement essentials (Stream B). |
-| 3 | **Editorial Heritage** | *Artisan Craft & Storytelling* | High-craft, serif typographic elegance inspired by Tang Bows, emphasizing 3-year durability and heirloom gift presentation. |
-
----
-
-## Technical Stack & Standards
-- **Zero-Dependency Modern Web:** HTML5, CSS3 Custom Properties, Vanilla ES6+ modules.
-- **Micro-Interactions:** Emil Kowalski physics (`--ease-out: cubic-bezier(0.23, 1, 0.32, 1)`, button active `scale(0.97)`, sub-300ms transitions).
-- **Direct WhatsApp Checkout:** Auto-compiles user selections, child name, class, and calculated totals into pre-formatted WhatsApp chat links.
+## Prototype Switcher
+Use the floating picker at the bottom or press number keys:
+- `1`: **Bespoke Studio** (interactive tier selector and order preview)
+- `2`: **Dual Stream** (split between resumption pre-orders and items ready to ship)
+- `3`: **Editorial Heritage** (clean list and itemized table view)
+- `←` / `→`: Cycle between variants
+- `R`: Replay animation
