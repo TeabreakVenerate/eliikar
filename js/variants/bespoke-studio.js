@@ -485,7 +485,6 @@ function variantBespokeStudio() {
           <a href="#v1-hero">Top of Page</a>
           <a href="#studio-builder">Packages</a>
           <a href="#catalog-section">Single Items</a>
-          <a href="admin.html" target="_blank">Admin Orders Ledger</a>
         </div>
         <p>&copy; ${new Date().getFullYear()} Elikar. Back to school dorm &amp; campus essentials.</p>
       </footer>
