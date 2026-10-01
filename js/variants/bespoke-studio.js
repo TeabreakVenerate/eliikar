@@ -352,16 +352,41 @@ function variantBespokeStudio() {
           margin-bottom: 1rem;
         }
         .v1-footer-links a {
-          color: var(--elikar-navy-900);
-          font-weight: 700;
+        /* WebNest Credit in Footer */
+        .v1-made-by {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.55rem;
+          margin-top: 1.25rem;
+          font-size: 0.88rem;
+          font-weight: 500;
+          color: var(--elikar-slate);
+        }
+        .webnest-credit-link {
+          display: inline-flex;
+          align-items: center;
           text-decoration: none;
+          transition: transform 150ms ease, opacity 150ms ease;
+          vertical-align: middle;
+        }
+        .webnest-credit-link:hover {
+          transform: translateY(-1px);
+          opacity: 0.85;
+        }
+        .webnest-logo-img {
+          height: 24px;
+          width: auto;
+          display: block;
+          object-fit: contain;
         }
       </style>
 
       <!-- Sticky Header -->
       <header class="v1-header">
-        <div class="v1-brand" onclick="window.smoothScrollTo('v1-hero')">
-          Elikar
+        <div class="v1-brand" onclick="window.smoothScrollTo('v1-hero')" style="display: flex; align-items: center; gap: 10px;">
+          <img src="pictures/Bloom by E logo.jpeg" alt="Bloom by E" style="height: 36px; width: 36px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+          <span>Bloom by E</span>
         </div>
         <div class="v1-nav-pills">
           <button class="v1-nav-btn primary" onclick="window.smoothScrollTo('studio-builder')">Packages</button>
@@ -486,7 +511,13 @@ function variantBespokeStudio() {
           <a href="#studio-builder">Packages</a>
           <a href="#catalog-section">Single Items</a>
         </div>
-        <p>&copy; ${new Date().getFullYear()} Elikar. Back to school dorm &amp; campus essentials.</p>
+        <p>&copy; ${new Date().getFullYear()} Bloom by E. Back to school dorm &amp; campus essentials.</p>
+        <div class="v1-made-by">
+          <span>Made by</span>
+          <a href="https://webnests.site" target="_blank" rel="noopener noreferrer" class="webnest-credit-link" title="Visit WebNest">
+            <img src="pictures/webnest-logo.png" alt="WebNest" class="webnest-logo-img">
+          </a>
+        </div>
       </footer>
     </div>
   `;
@@ -523,5 +554,5 @@ window.v1SelectImage = function(imgIndex) {
 
 window.v1AddCurrentPackageToCart = function() {
   const currentPkg = CAMPUS_PACKAGES[window.v1State.packageIndex];
-  window.addToCart(currentPkg, true);
+  window.addToCart(currentPkg, false);
 };

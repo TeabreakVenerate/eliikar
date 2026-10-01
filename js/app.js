@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ELIKAR — PRODUCTION APP RUNNER & SHOPPING CART CONTROLLER
+   BLOOM BY E — PRODUCTION APP RUNNER & SHOPPING CART CONTROLLER
    Integrated with Dual-Routing (WhatsApp & Telegram), Persistent Order Ledger,
    and Automated Email Dispatch to ei.oluwasemilore.on@gmail.com.
    ========================================================================== */
@@ -49,7 +49,7 @@ window.cart = [];
 // Load cart from localStorage
 function loadCart() {
   try {
-    const saved = localStorage.getItem('elikar_cart');
+    const saved = localStorage.getItem('bloom_cart') || localStorage.getItem('auralyn_cart') || localStorage.getItem('elikar_cart');
     if (saved) {
       window.cart = JSON.parse(saved);
     }
@@ -61,12 +61,12 @@ function loadCart() {
 // Save cart to localStorage
 function saveCart() {
   try {
-    localStorage.setItem('elikar_cart', JSON.stringify(window.cart));
+    localStorage.setItem('bloom_cart', JSON.stringify(window.cart));
   } catch (e) {}
 }
 
-// Add Item to Cart
-window.addToCart = function(product, showDrawer = true) {
+// Add Item to Cart (Default showDrawer = false to prevent auto-popup)
+window.addToCart = function(product, showDrawer = false) {
   if (!product || !product.id) return;
 
   const existingIndex = window.cart.findIndex(i => i.id === product.id);
@@ -197,12 +197,12 @@ const EMAIL_RECIPIENT = "ei.oluwasemilore.on@gmail.com";
 const WHATSAPP_PHONE = "2349026080961"; // +234 902 608 0961
 const TELEGRAM_HANDLE = "https://t.me/ElisabethAwadje";
 
-// Save order into localStorage ledger
+/// Save order into localStorage ledger
 function saveOrderToLedger(order) {
   try {
-    const existingOrders = JSON.parse(localStorage.getItem('elikar_orders') || '[]');
+    const existingOrders = JSON.parse(localStorage.getItem('bloom_orders') || localStorage.getItem('auralyn_orders') || localStorage.getItem('elikar_orders') || '[]');
     existingOrders.unshift(order);
-    localStorage.setItem('elikar_orders', JSON.stringify(existingOrders));
+    localStorage.setItem('bloom_orders', JSON.stringify(existingOrders));
   } catch (e) {
     console.error('Failed to save order to ledger:', e);
   }
@@ -213,7 +213,7 @@ async function dispatchOrderEmail(order) {
   const itemsSummary = order.items.map(i => `${i.name} (Qty: ${i.quantity}) - ₦${(i.price * i.quantity).toLocaleString()}`).join('\n');
 
   const payload = {
-    _subject: `New Elikar Order #${order.id} - ${order.customer.name}`,
+    _subject: `New Bloom by E Order #${order.id} - ${order.customer.name}`,
     "Order ID": order.id,
     "Order Date": order.dateFormatted,
     "Customer Name": order.customer.name,
@@ -248,7 +248,7 @@ function generateOrderId() {
   for (let i = 0; i < 5; i++) {
     rand += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  return `ELK-${rand}`;
+  return `BBE-${rand}`;
 }
 
 // Validate Customer Inputs
@@ -329,11 +329,11 @@ window.checkoutViaWhatsApp = async function() {
   dispatchOrderEmail(order);
 
   // 3. Compose WhatsApp message per client specification:
-  // Starts with: "Hello Elikar! I'm interested in this:"
+  // Starts with: "Hello Bloom by E! I'm interested in this:"
   const itemsText = order.items.map(i => `• ${i.name} (x${i.quantity}) — ₦${(i.price * i.quantity).toLocaleString()}`).join('\n');
 
   const waMessage = 
-`Hello Elikar! I'm interested in this:
+`Hello Bloom by E! I'm interested in this:
 
 *Order Reference:* #${orderId}
 ----------------------------------
@@ -400,7 +400,7 @@ window.checkoutViaTelegram = async function() {
   const itemsText = order.items.map(i => `• ${i.name} (x${i.quantity}) — ₦${(i.price * i.quantity).toLocaleString()}`).join('\n');
 
   const tgMessage = 
-`Hello Elikar! I'm interested in this:
+`Hello Bloom by E! I'm interested in this:
 
 Order Reference: #${orderId}
 ----------------------------------
@@ -415,7 +415,7 @@ Customer Information:
 • Email: ${customer.email}
 • Campus / Hostel: ${customer.hostel}
 ${customer.notes ? `• Notes: ${customer.notes}\n` : ''}
-Please confirm availability and payment details. Thank you!`;
+Please confirm availability and share payment details. Thank you!`;
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(tgMessage).catch(() => {});

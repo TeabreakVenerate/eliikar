@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ELIKAR — CAMPUS ESSENTIALS CATALOG
+   BLOOM BY E — CAMPUS ESSENTIALS CATALOG
    Humanized, realistic product copy without marketing fluff.
    ========================================================================== */
 

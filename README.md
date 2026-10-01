@@ -1,4 +1,4 @@
-# Elikar
+# Bloom by E
 
 Back-to-school pre-order website for university students.
 
